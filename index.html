@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Text Editor</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="container">
+        <div class="leftSide">
+            <div class="leftButton">
+                <button onclick="undo()">Undo</button>
+                <button onclick="redo()">Redo</button>
+
+        </div>
+        <div id="Counter">0</div>
+        </div>
+        <div class="middle ">
+            <h2>Text Form</h2>
+            <!-- <input type="text" placeholder="New Text"> -->
+            <div id="textBox" contenteditable="true" oninput="updateCounter()">Add text here...</div>
+
+            <br>
+            <br>
+            <div class="textManipulating">
+                <h2>Your text summery</h2>
+                <div className="mb-3 ">
+                    <textarea id="textarea" ></textarea>
+                   
+                    <div class="midButton">
+                        <button id="UpperCase" onclick="handleUpper()">UpperCase</button>
+                        <button id="LowerCase" onclick="handleLower()">LowerCase</button>
+                        <button id="FirstCase" onclick="handleFirstUpper()">Firstletter Upper</button>
+                       
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="rightSide">
+            <div class="rightElement">
+            <label for="fontFamily">Select Font Family:</label>
+            <select id="fontFamily" onchange="changeFont()">
+                <option value="Arial">Arial</option>
+                <option value="Arial Black">Arial Black</option>
+                <option value="Algerian">Algerian</option>
+                <option value="Arial Rounded MT Bold">Arial Rounded MT Bold</option>
+                <option value="ASHOK">ASHOK</option>
+                <option value="Blackadder ITC">Blackadder ITC</option>
+                <option value="Bradley Hand ITC">Bradley Hand ITC</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Footlight MT Light">Footlight MT Light</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Times New Roman">Times New Roman</option>
+
+                <option value="Verdana">Verdana</option>
+               
+            </select>
+
+            <br><br>
+
+            <label for="fontSize"> Select Font Size</label>
+            <select id="fontSize" onchange="changeFontSize()">
+                <option value="4">Size</option>
+                <option value="4">4px</option>
+                <option value="8">8px</option>
+                <option value="12">12px</option>
+                <option value="16">16px</option>
+                <option value="20">20px</option>
+                <option value="24">24px</option>
+                <option value="28">28px</option>
+                <option value="32">32px</option>
+                <option value="36">36px</option>
+                <option value="40">40px</option>
+                <option value="44">44px</option>
+                <option value="48">48px</option>
+                <option value="52">52px</option>
+            </select>
+            <br><br>
+            <label for="fontColor">Select Text Color:</label>
+            <input type="color" id="fontColor" onchange="changeFontColor()">
+
+            <br><br>
+            <label for="newText">Add Text</label>
+            <input type="text" name="" id="newText">
+            <button onclick="addText()">Add Text</button>
+        </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
